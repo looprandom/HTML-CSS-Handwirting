@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>水平居中</title>
+    <style>
+        .one {
+            text-align: center;
+            background-color: red;
+        }
+        
+        .two {
+            margin: 50px 0;
+            background-color: blue;
+        }
+        
+        .two span {
+            width: 400px;
+            /*行内元素设置宽高不生效 */
+            margin: 5px auto;
+            /*行内元素水平方向的内外边距会生效，垂直不会 */
+            background-color: green;
+        }
+        
+        .two div {
+            width: 400px;
+            margin: 0 auto;
+            background-color: green;
+        }
+        
+        .two img {
+            width: 50px;
+            margin: 5px auto;
+            /*行内元素水平垂直方向的内外边距都会生效 */
+            background-color: green;
+        }
+        
+        .three {
+            display: flex;
+            /* justify-content: center; */
+            /*设置主轴上flex-item的对齐方式*/
+            background-color: yellow;
+            height: 100px;
+            margin: 50px 0;
+        }
+        
+        .three span {
+            width: 400px;
+            background-color: red;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <p>行内元素和行内块元素：text-aligin: center</p>
+        <div class="one">
+            <span>行内元素span</span>
+            <img src="../src/img/fillin.png" alt="">
+        </div>
+        <div class="two">
+            <span>宽度小于父容器的行内元素: margin: 0 auto 无法水平居中</span>
+            <div>宽度小于父容器的块级元素：margin: 0 auto</div>
+            <img src="../src/img/fillin.png" alt="">
+        </div>
+        <div class="three">
+            <span>
+                行内元素span: flex布局
+            </span>
+        </div>
+        <div class="four">
+        </div>
+    </div>
+</body>
+
+</html>
